@@ -13,7 +13,6 @@ describe('App.vue', () => {
     const inputComponent = wrapper.findComponent({ name: 'TodoInput' });
     const listComponent = wrapper.findComponent({ name: 'TodoList' });
     
-    expect(wrapper.name()).toMatch('ModanisaApp');
     expect(title.text()).toMatch('Modanisa Todos');
     expect(inputComponent.exists()).toBe(true);
     expect(listComponent.exists()).toBe(true);
