@@ -1,5 +1,5 @@
 <template>
-  <form @submit="createTODO">
+  <form @submit.prevent="createTODO">
     <input type="text" v-model="todo" />
     <button @click="createTODO" type="submit">Add</button>
   </form>
@@ -10,8 +10,7 @@ export default {
   name: 'TodoInput',
   methods: {
     createTODO(e) {
-      e.preventDefault();
-      this.$emit('modanisa.createTODO', this.todo);
+      this.$emit('modanisa-create-todo', this.todo);
     }
   }
 }

@@ -14,7 +14,7 @@ describe('TodoInput.vue', () => {
     expect(buttonElement.exists()).toBe(true);
   });
 
-  it('can type new todo & trigger event "modanisa.createTODO" by clicking on the submit button', async () => {
+  it('can type new todo & trigger event "modanisa-create-todo" by clicking on the submit button', async () => {
     const wrapper = shallowMount(TodoInput);
 
     const inputElement = wrapper.find('input[type="text"]');
@@ -25,10 +25,10 @@ describe('TodoInput.vue', () => {
 
     await wrapper.vm.$nextTick();
 
-    expect(wrapper.emitted()['modanisa.createTODO'][0]).toEqual(['buy some milk']);
+    expect(wrapper.emitted()['modanisa-create-todo'][0]).toEqual(['buy some milk']);
   });
   
-  it('can type new todo & trigger event "modanisa.createTODO" by hitting enter', async () => {
+  it('can type new todo & trigger event "modanisa-create-todo" by hitting enter', async () => {
     const wrapper = shallowMount(TodoInput);
     const formElement = wrapper.find('form');
     const inputElement = wrapper.find('input[type="text"]');
@@ -38,6 +38,6 @@ describe('TodoInput.vue', () => {
 
     await wrapper.vm.$nextTick();
 
-    expect(wrapper.emitted()['modanisa.createTODO'][0]).toEqual(['buy some milk']);
+    expect(wrapper.emitted()['modanisa-create-todo'][0]).toEqual(['buy some milk']);
   });
 })
