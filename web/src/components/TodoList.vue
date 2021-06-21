@@ -1,6 +1,7 @@
 <template>
   <ul>
-    <li v-for="item in items" :key="item.id">
+    <li v-if="!items.length">You're all cought up!</li>
+    <li v-else v-for="item in items" :key="item.id">
       {{ item.text }}
     </li>
   </ul>
@@ -21,4 +22,15 @@ export default {
 </script>
 
 <style>
+  ul { list-style: none; }
+  
+  li {
+    font-size: 21px;
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+  }
+  
+  li:last-of-type {
+    border-bottom: none;
+  }
 </style>

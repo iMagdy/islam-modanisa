@@ -1,10 +1,11 @@
 <template>
-  <div id="app">
-    <h1>Modanisa Todos</h1>
-
-    <TodoInput @modanisa-create-todo="postTODO" />
+  <div class="app">
+    <div class="input">
+      <h1>Modanisa Todos</h1>
+      <TodoInput @modanisa-create-todo="postTODO" />
+    </div>
+      
     <TodoList :items="items" />
-    {{JSON.stringify(items, null, 2)}}
   </div>
 </template>
 
@@ -39,4 +40,23 @@ export default {
 </script>
 
 <style>
+  .app {
+    background: #fff;
+    width: 80vw;
+    max-width: 550px;
+    height: 70vh;
+    margin-top: 15vh;
+    padding: 0 20px 20px 20px;
+    overflow-y: auto;
+  }
+  .input {
+    position: sticky;
+    top: 0;
+    background: #fffffff2;
+    margin-bottom: 20px;
+    padding: 20px 0;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
 </style>
