@@ -10,10 +10,12 @@
 export default {
   name: 'TodoList',
   props: {
-    items: Array,
-    required: true,
-    validator: (value) => value.every(({ id, text }) => 
-      typeof text === 'string' && typeof id === 'string' )
+    items: {
+      type: Array,
+      required: true,
+      validator: (value) => value.every(({ id, text }) => 
+        typeof text === 'string' && typeof id === 'string' )
+    }
   }
 }
 </script>

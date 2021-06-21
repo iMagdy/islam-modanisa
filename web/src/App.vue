@@ -3,7 +3,8 @@
     <h1>Modanisa Todos</h1>
 
     <TodoInput @modanisa-create-todo="postTODO" />
-    <TodoList />
+    <TodoList :items="items" />
+    {{JSON.stringify(items, null, 2)}}
   </div>
 </template>
 
@@ -18,10 +19,21 @@ export default {
     TodoInput,
     TodoList
   },
-  methods: {
-    async postTODO(todo) {
-      await fetch(`${API_URL}/todos`, { method: 'post', body: todo });
+  data() {
+    return {
+      items: []
     }
+  },
+  methods: {
+    postTODO(todo) {
+      return fetch(`${API_URL}/todos`, { method: 'post', body: todo });
+    },
+    async getTODOs() {
+      this.items = await fetch(`${API_URL}/todos`).then(res => res.json());
+    }
+  },
+  mounted() {
+    this.getTODOs();
   }
 }
 </script>
