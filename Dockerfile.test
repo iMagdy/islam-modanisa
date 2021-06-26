@@ -1,0 +1,14 @@
+FROM node:lts-slim
+
+# Test API
+WORKDIR /api
+COPY api .
+RUN npm i -g npm
+RUN npm i --quiet
+RUN npm test
+
+# Test web app
+WORKDIR /web
+COPY web .
+RUN npm i --quiet
+RUN npm test

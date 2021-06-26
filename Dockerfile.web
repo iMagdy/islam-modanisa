@@ -1,0 +1,29 @@
+FROM node:lts-slim as builder
+
+# Create and change to the build directory.
+WORKDIR /web
+
+# Copy local code to the container image.
+COPY web .
+
+# Use latest npm.
+RUN npm i -g npm
+
+# Install production dependencies.
+RUN npm i
+
+# Build
+RUN npm build
+
+
+FROM nginx as serve
+
+# Serve dir
+RUN mkdir /app
+
+# Copy built files from build step
+COPY --from=builder /web/dist /app
+
+# Copy nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
+
