@@ -22,13 +22,14 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: docker build . -t tester -f Docker.test
+    - run: docker build . -t tester -f Dockerfile.test
     - run: docker run tester
 
   deploy-api:
     name: Deploy API
     runs-on: ubuntu-latest
     environment: prod
+    needs: build
 
     steps:
     - name: Checkout
@@ -79,6 +80,7 @@ jobs:
     name: Deploy web app
     runs-on: ubuntu-latest
     environment: prod
+    needs: build
 
     steps:
     - name: Checkout
