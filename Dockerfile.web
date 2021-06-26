@@ -13,7 +13,7 @@ RUN npm i -g npm
 RUN npm i
 
 # Build
-RUN npm build
+RUN npm run build
 
 
 FROM nginx as serve
