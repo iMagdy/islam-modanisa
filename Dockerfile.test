@@ -11,4 +11,4 @@ RUN npm test
 WORKDIR /web
 COPY web .
 RUN npm i --quiet
-RUN npm test
+RUN npm run test:unit
