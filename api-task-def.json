@@ -62,13 +62,13 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "modanisa-api"
+      "name": "api"
     }
   ],
   "placementConstraints": [],
   "memory": "512",
   "taskRoleArn": null,
-  "family": "modanisa-api",
+  "family": "api",
   "pidMode": null,
   "requiresCompatibilities": ["FARGATE"],
   "networkMode": "awsvpc",

@@ -66,13 +66,13 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "modanisa-web"
+      "name": "web"
     }
   ],
   "placementConstraints": [],
   "memory": "512",
   "taskRoleArn": null,
-  "family": "modanisa-web",
+  "family": "web",
   "pidMode": null,
   "requiresCompatibilities": ["FARGATE"],
   "networkMode": "awsvpc",
