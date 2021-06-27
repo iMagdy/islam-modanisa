@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     postTODO(todo) {
-      return fetch(`${API_URL}/todos`, { method: 'post', body: todo });
+      return fetch(`${API_URL}/todos`, { method: 'post', body: todo }).then(this.getTODOs);
     },
     async getTODOs() {
       this.items = await fetch(`${API_URL}/todos`).then(res => res.json());

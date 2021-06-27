@@ -31,7 +31,7 @@ describe('App.vue', () => {
   });
 
   it('can receive "modanisa-create-todo" and triggers postTODO method to dispatch XHR to the API', async () => {
-    window.fetch = (url, options) => {
+    window.fetch = async (url, options) => {
       expect(url).toEqual(`${API_URL}/todos`);
       expect(options.method).toEqual('post');
       expect(options.body).toEqual('My test todo item');
@@ -82,7 +82,7 @@ describe('App.vue', () => {
     
     // now after submitting
 
-    window.fetch = () => 1;
+    window.fetch = async () => 1;
 
     wrapper = mount(App);
     
@@ -92,6 +92,6 @@ describe('App.vue', () => {
 
     await inputWrapper.vm.$nextTick();
 
-    expect(getTODOsSpy.callCount).toEqual(3);
+    expect(getTODOsSpy.callCount).toEqual(4);
   })
 })
