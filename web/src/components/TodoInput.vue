@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="createTODO">
     <input placeholder="Buy some milk?..." type="text" v-model="todo" required />
-    <button @click="createTODO" type="submit">Add</button>
+    <button @click="createTODO" type="button">Add</button>
   </form>
 </template>
 
