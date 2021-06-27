@@ -1,21 +1,13 @@
 # Modanisa Todos
 
+This web app is built using Vue, and was initialized via Vue CLI.
+
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Quick start
 ```
 npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
 ```
