@@ -28,7 +28,7 @@
       "environment": [
         {
           "name": "VUE_APP_API_URL",
-          "value": "http://modanisa-alb-608088149.eu-central-1.elb.amazonaws.com/api"
+          "value": "https://det2k3h6oykdz.cloudfront.net/api"
         },
         {
           "name": "NODE_ENV",

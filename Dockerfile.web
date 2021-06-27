@@ -13,7 +13,7 @@ RUN npm i -g npm
 RUN npm i
 
 # Build
-ENV VUE_APP_API_URL=http://modanisa-alb-608088149.eu-central-1.elb.amazonaws.com/api
+ENV VUE_APP_API_URL=https://det2k3h6oykdz.cloudfront.net/api
 RUN npm run build
 
 
