@@ -30,7 +30,8 @@ export default {
       return fetch(`${API_URL}/todos`, { method: 'post', body: todo }).then(this.getTODOs);
     },
     async getTODOs() {
-      this.items = await fetch(`${API_URL}/todos`).then(res => res.json());
+      const items = await fetch(`${API_URL}/todos`).then(res => res.json());
+      this.items = items.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     }
   },
   mounted() {
