@@ -18,7 +18,7 @@ describe('App.vue', () => {
   afterEach(() => {
     sandbox.restore();
   });
-  
+
   it('renders application title and core components', () => {
     const title = wrapper.find('h1');
 
@@ -31,10 +31,11 @@ describe('App.vue', () => {
   });
 
   it('can receive "modanisa-create-todo" and triggers postTODO method to dispatch XHR to the API', async () => {
-    window.fetch = async (url, options) => {
+    window.fetch = async (url, options = {}) => {
       expect(url).toEqual(`${API_URL}/todos`);
-      expect(options.method).toEqual('post');
-      expect(options.body).toEqual('My test todo item');
+      if (options.method) expect(options.method).toEqual('post');
+      if (options.body) expect(options.body).toEqual('My test todo item');
+      return { json: () => [] }
     };
     
     const inputWrapper = wrapper.findComponent({ name: 'TodoInput' });
@@ -82,7 +83,7 @@ describe('App.vue', () => {
     
     // now after submitting
 
-    window.fetch = async () => 1;
+    window.fetch = async () => ({ json: () => [] });
 
     wrapper = mount(App);
     

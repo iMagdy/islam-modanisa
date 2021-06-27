@@ -7,7 +7,7 @@ describe('TodoInput.vue', () => {
 
     const formElement = wrapper.find('form');
     const inputElement = wrapper.find('input[type="text"]');
-    const buttonElement = wrapper.find('button[type="submit"]');
+    const buttonElement = wrapper.find('button');
 
     expect(formElement.exists()).toBe(true);
     expect(inputElement.exists()).toBe(true);
@@ -18,7 +18,7 @@ describe('TodoInput.vue', () => {
     const wrapper = shallowMount(TodoInput);
 
     const inputElement = wrapper.find('input[type="text"]');
-    const buttonElement = wrapper.find('button[type="submit"]');
+    const buttonElement = wrapper.find('button');
 
     inputElement.setValue('buy some milk');
     buttonElement.trigger('click');
