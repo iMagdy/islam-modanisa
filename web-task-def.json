@@ -38,6 +38,10 @@
         {
           "name": "PORT",
           "value": "3000"
+        },
+        {
+          "name": "VUE_APP_API_URL",
+          "value": "http://modanisa-alb-608088149.eu-central-1.elb.amazonaws.com/api"
         }
       ],
       "dockerSecurityOptions": null,
