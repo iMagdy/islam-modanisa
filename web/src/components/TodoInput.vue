@@ -1,6 +1,6 @@
 <template>
-  <form @submit.prevent="createTODO">
-    <input placeholder="Buy some milk?..." type="text" v-model="todo" required />
+  <form ref="form" @submit.prevent="createTODO">
+    <input autofocus placeholder="Buy some milk?..." type="text" v-model="todo" required minlength="3" maxlength="50" />
     <button @click="createTODO" type="button">Add</button>
   </form>
 </template>
@@ -8,9 +8,13 @@
 <script>
 export default {
   name: 'TodoInput',
+  data() {
+    return { todo: '' }
+  },
   methods: {
     createTODO() {
       this.$emit('modanisa-create-todo', this.todo);
+       this.$refs.form.reset();
     }
   }
 }
@@ -20,15 +24,15 @@ export default {
   form {
     display: grid;
     grid-template-columns: 1fr 90px;
-    gap: 20px;
+    gap: var(--space);
   }
   
   input {
-    font-size: 21px;
-    padding: 10px;
+    font-size: var(--baseFontSize);
+    padding: calc(var(--space) / 2);
   }
 
   button {
-    font-size: 21px;
+    font-size: var(--baseFontSize);
   }
 </style>
