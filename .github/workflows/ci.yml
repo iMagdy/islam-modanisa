@@ -22,7 +22,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: docker build . -t tester -f Dockerfile.test
+    - run: docker build . -t tester -f config/Dockerfile.test
     - run: docker run tester
 
   deploy-api:
@@ -56,7 +56,7 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . -f Dockerfile.api
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . -f config/Dockerfile.api
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
@@ -107,7 +107,7 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . -f Dockerfile.web
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . -f config/Dockerfile.web
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 

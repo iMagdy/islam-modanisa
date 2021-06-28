@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "zx start.mjs",
-    "test": "zx test.mjs"
+    "start": "zx scripts/start.mjs",
+    "test": "zx scripts/test.mjs"
   },
   "author": "",
   "license": "ISC",
