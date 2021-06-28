@@ -20,12 +20,11 @@ describe('App.vue', () => {
   });
 
   it('renders application title and core components', () => {
-    const title = wrapper.find('h1');
-
+    const logo = wrapper.find('img');
     const inputComponent = wrapper.findComponent({ name: 'TodoInput' });
     const listComponent = wrapper.findComponent({ name: 'TodoList' });
     
-    expect(title.text()).toMatch('Modanisa Todos');
+    expect(logo.exists()).toBe(true);
     expect(inputComponent.exists()).toBe(true);
     expect(listComponent.exists()).toBe(true);
   });

@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <div class="input">
-      <h1>Modanisa Todos</h1>
+      <img :src="require('@/assets/logo.svg')" />
       <TodoInput @modanisa-create-todo="postTODO" />
     </div>
       
@@ -61,8 +61,7 @@ export default {
     padding: var(--space) 0;
   }
   
-  h1 {
+  img {
     margin-bottom: var(--space);
-    font-size: calc(var(--baseFontSize) * 1.3);
   }
 </style>

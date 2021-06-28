@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "VUE_APP_API_URL=http://localhost:8000 vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
+    "test": "run-p tests:*",
+    "tests:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -21,6 +22,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "npm-run-all": "^4.1.5",
     "sinon": "^11.1.1",
     "vue-template-compiler": "^2.6.11"
   },
