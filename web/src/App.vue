@@ -27,11 +27,11 @@ export default {
   },
   methods: {
     postTODO(todo) {
-      return fetch(`${API_URL}/todos`, { method: 'post', body: todo }).then(this.getTODOs);
+      fetch(`${API_URL}/todos`, { method: 'post', body: todo }).then(this.getTODOs);
     },
     async getTODOs() {
       const items = await fetch(`${API_URL}/todos`).then(res => res.json());
-      this.items = items.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+      this.items = items.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     }
   },
   mounted() {
@@ -42,22 +42,27 @@ export default {
 
 <style>
   .app {
-    background: #fff;
-    width: 80vw;
-    max-width: 550px;
-    height: 70vh;
+    background: var(--color-todos-bg);
+    width: var(--appWidth);
+    max-width: var(--appMaxWidth);
+    height: var(--appHeight);
     margin-top: 15vh;
-    padding: 0 20px 20px 20px;
+    padding: 0 var(--space) var(--space);
     overflow-y: auto;
+    border-radius: calc(var(--space) / 2);
+    box-shadow: 0 0 calc(var(--space) / 4);
   }
+
   .input {
     position: sticky;
     top: 0;
-    background: #fffffff2;
-    margin-bottom: 20px;
-    padding: 20px 0;
+    background: var(--color-input-bg);
+    margin-bottom: var(--space);
+    padding: var(--space) 0;
   }
+  
   h1 {
-    margin-bottom: 20px;
+    margin-bottom: var(--space);
+    font-size: calc(var(--baseFontSize) * 1.3);
   }
 </style>

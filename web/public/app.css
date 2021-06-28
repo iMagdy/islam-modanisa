@@ -1,0 +1,32 @@
+:root {
+  /* Colors */
+  --color-app-bg: #818193;
+  --color-todos-bg: #fff;
+  --color-input-bg: #fffffff2;
+  --color-todo-item-border: #d6d6d6;
+
+  /* Spaces */
+  --space: 20px;
+
+  /* Fonts */
+  --fontFamily: Arial, Helvetica, sans-serif;
+  --baseFontSize: 21px;
+
+  /* Dimensions */
+  --appWidth: 80vw;
+  --appMaxWidth: 550px;
+  --appHeight: 70vh;
+  
+}
+
+* { 
+  margin: 0;
+  padding: 0;
+} 
+
+body { 
+  background: var(--color-app-bg); 
+  font-family: var(--fontFamily);
+  display: grid; 
+  justify-content: center;
+}

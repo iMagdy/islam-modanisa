@@ -22,12 +22,17 @@ export default {
 </script>
 
 <style>
-  ul { list-style: none; }
+  ul {
+    list-style: none;
+    display: grid;
+    gap: var(--space);
+  }
   
   li {
-    font-size: 21px;
-    border-bottom: 1px solid #333;
-    padding: 10px 0;
+    font-size: var(--baseFontSize);
+    border: 1px solid var(--color-todo-item-border);
+    padding: calc(var(--space) / 2);
+    border-radius: 3px;
   }
   
   li:last-of-type {
