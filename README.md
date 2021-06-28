@@ -15,11 +15,22 @@ There is a Github Workflow in place which will monitor any change happens on `ma
 
 The work flow will run all the test before pushing ECR images and running ECS deployment.
 
-### For the Vue app:
+### The web app (https://github.com/vngrs/islam-modanisa/tree/master/web):
 
-It is built via `Dockerfile.web` and pushed to ECR, then runs on ECS, this `web` container will serve the built Vue app via nginx.
+**Tech stack:**
+  - Vue (Framework)
+  - Docker (Build & deploy)
+  - Jest (Unit tests)
+  - Playwright (End-to-end tests)
 
-### For the APIs
+The front-end It is built via `Dockerfile.web` and pushed to ECR, then runs on ECS, this `web` container will serve the built Vue app via nginx.
 
-It is built via `Dockerfile.api` file and pushed to ECR, then it runs on ECS, this `api` container runs native node web server.
+### The APIs (https://github.com/vngrs/islam-modanisa/tree/master/api)
+
+**Tech stack:**
+  - Node (Runtime)
+  - Docker (Build & deploy)
+  - Jest (Unit tests)
+
+The API is built via `Dockerfile.api` file and pushed to ECR, then it runs on ECS, this `api` container runs native node web server.
 
