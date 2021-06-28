@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "zx scripts/start.mjs",
+    "start": "zx scripts/dev.mjs",
     "test": "zx scripts/test.mjs"
   },
   "author": "",

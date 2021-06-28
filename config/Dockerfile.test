@@ -1,14 +1,23 @@
-FROM node:lts-slim
+FROM mcr.microsoft.com/playwright:focal
+
+################ Test API ################
+# Use latest npm
+RUN npm i -g npm
 
 # Test API
 WORKDIR /api
 COPY api .
-RUN npm i -g npm
-RUN npm i --quiet
+RUN npm i
 RUN npm test
 
-# Test web app
+################ Test web app ################
+
+# Global deps
+RUN npm i -g npm zx
+
 WORKDIR /web
 COPY web .
-RUN npm i --quiet
-RUN npm run test:unit
+RUN npm i
+COPY config/test.mjs .
+
+RUN zx test.mjs

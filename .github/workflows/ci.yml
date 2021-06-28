@@ -23,7 +23,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: docker build . -t tester -f config/Dockerfile.test
-    - run: docker run tester
 
   deploy-api:
     name: Deploy API

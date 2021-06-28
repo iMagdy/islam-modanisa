@@ -1,7 +1,4 @@
 #!/usr/bin/env zx
 
-// Test APIs
-await $`npm --prefix api test`;
-
-// Test web app
-await $`npm --prefix web run test:unit`;
+// Build and execute tests
+await $`docker build . -t tester -f config/Dockerfile.test`;

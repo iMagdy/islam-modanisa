@@ -27,11 +27,11 @@ export default {
   },
   methods: {
     postTODO(todo) {
-      fetch(`${API_URL}/todos`, { method: 'post', body: todo }).then(this.getTODOs);
+      window.fetch?.(`${API_URL}/todos`, { method: 'post', body: todo }).then(this.getTODOs);
     },
     async getTODOs() {
-      const items = await fetch(`${API_URL}/todos`).then(res => res.json());
-      this.items = items.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      const items = await window.fetch?.(`${API_URL}/todos`).then(res => res.json());
+      this.items = items?.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) ?? [];
     }
   },
   mounted() {

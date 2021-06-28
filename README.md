@@ -9,7 +9,7 @@ For local development `npm i && npm start`
 
 Run `npm test`
 
-## Deployments
+## Deployments (https://det2k3h6oykdz.cloudfront.net/)
 
 There is a Github Workflow in place which will monitor any change happens on `master` branch and run a deployment to AWS ECS.
 
