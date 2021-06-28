@@ -63,7 +63,7 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: api-task-def.json
+        task-definition: config/api-task-def.json
         container-name: api
         image: ${{ steps.build-image.outputs.image }}
 
@@ -114,7 +114,7 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: web-task-def.json
+        task-definition: config/web-task-def.json
         container-name: web
         image: ${{ steps.build-image.outputs.image }}
 
